@@ -1,7 +1,7 @@
 import './App.css';
 import Main from './components/main';
-import Card from './components/card';
-import SingleMovie from './components/singleMovie';
+// import Card from './components/card';
+// import SingleMovie from './components/singleMovie';
 function App() {
   return (
     <div className="app-container">
