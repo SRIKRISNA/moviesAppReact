@@ -42,9 +42,13 @@ function Main(){
         setURL(url)
         setSearch(" ")
     }
+    function ViewPage(){
+        alert("Helo")
+    }
     return(
         <>
             <div className="header">
+                <h3>MovieDb</h3>
                 <nav>
                     <ul>
                         {
@@ -70,7 +74,7 @@ function Main(){
                      ? <p className="notfond">Not Found (404)</p>
                      : movieData.map((res, pos)=>{
                         return(
-                            <Card info={res} key={pos}/>
+                            <Card info={res} key={pos} onClick={ViewPage}/>
                         )
                      })
                 }
