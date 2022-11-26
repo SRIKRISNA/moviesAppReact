@@ -13,7 +13,8 @@ function Main(){
     var arrData = ["Popular","Top Rated","Upcoming"]
     const [search, setSearch]=useState();
 
-    useEffect(()=>{
+    useEffect((event)=>{
+        event.preventDefault()
         fetch(url_set).then(res => res.json()).then(data=>{
             setMovieData(data.results);
         })
@@ -30,6 +31,7 @@ function Main(){
         setURL(url)
     }
     const searchMovie=(event)=>{
+        event.preventDefault()
         if(event.key === "Enter"){
             url = base_URL+"/search/movie?api_key=7c01b82b0aa395aad5febf7f163923a8&query="+search;
             setURL(url)
@@ -42,9 +44,7 @@ function Main(){
         setURL(url)
         setSearch(" ")
     }
-    function ViewPage(){
-        alert("Helo")
-    }
+    
     return(
         <>
             <div className="header">
@@ -74,7 +74,7 @@ function Main(){
                      ? <p className="notfond">Not Found (404)</p>
                      : movieData.map((res, pos)=>{
                         return(
-                            <Card info={res} key={pos} onClick={ViewPage}/>
+                            <Card info={res} key={pos}/>
                         )
                      })
                 }
