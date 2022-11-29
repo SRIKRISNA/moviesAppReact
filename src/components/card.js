@@ -14,7 +14,7 @@ function Card(movie) {
     return (
         <>
             <div className="movie" onClick={ViewPage}>
-                <img src={img_pat+movie.info.poster_path} className="poster"></img>
+                <img src={img_pat+movie.info.poster_path} alt="imge" className="poster"></img>
                 <div className="movie_details">
                     <div className="box">
                         <h4 className="title">{movie.info.title}</h4>
