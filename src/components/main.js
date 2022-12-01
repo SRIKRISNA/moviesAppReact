@@ -31,16 +31,17 @@ function Main(){
             url=upcoming_movie;
         setURL(url)
     }
-    const searchMovie=(event)=>{
-        event.preventDefault()
-        if(event.key === "Enter"){
-            url = base_URL+"/search/movie?api_key=7c01b82b0aa395aad5febf7f163923a8&query="+search;
-            setURL(url)
-            setSearch(" ")
-        }
+    // const searchMovie=(event)=>{
+    //     event.preventDefault()
+    //     if(event.key === "Enter"){
+    //         url = base_URL+"/search/movie?api_key=7c01b82b0aa395aad5febf7f163923a8&query="+search;
+    //         setURL(url)
+    //         // setSearch(" ")
+    //     }
         
-    }
-    function SearchResult(){
+    // }
+    function SearchResult(event){
+                event.preventDefault()
         url = base_URL+"/search/movie?api_key=7c01b82b0aa395aad5febf7f163923a8&query="+search;
         setURL(url)
         setSearch(" ")
@@ -67,7 +68,8 @@ function Main(){
                 </nav>
                 <form>
                     <div className="searchBox">
-                        <input type="text" placeholder="Search Movie Name" className="searchText" onChange={(e)=>{setSearch(e.target.value)}} value={search} onKeyPress={searchMovie}></input>
+                    {/* onKeyPress={searchMovie} */}
+                        <input type="text" placeholder="Search Movie Name" className="searchText" onChange={(e)=>{setSearch(e.target.value)}} value={search} ></input> 
                         <button className="search-btn" onClick={SearchResult}><i className="fas fa-search"></i></button>
                     </div>
                 </form>
